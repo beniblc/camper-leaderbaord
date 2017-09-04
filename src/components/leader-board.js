@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
-export default class App extends Component {
+class Leaderboard extends Component {
   render() {
     return (
       <div>React simple starter</div>
     );
   }
 }
+
+export default Leaderboard
