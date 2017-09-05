@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-//import Leaderboard from './components/leaderboard';
-import LeaderboardItems from './components/leaderboard-items';
+import Leaderboard from './components/leaderboard';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state={
+      users: []
+    };
+  }
+
+  componentDidMount() {
+    fetch('https://fcctop100.herokuapp.com/api/fccusers/top/recent#')
+    .then(result=> result.json())
+    .then(users => this.setState({ users }) );
+  }
 
   render() {
     return(
       <div>
         <h1>Camper Leaderboard</h1>
-        <LeaderboardItems />
+        <Leaderboard
+          users={ this.state.users } />
       </div>
     )
   }

@@ -1,41 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class LeaderboardItems extends Component {
-  
-  constructor() {
-    super();
+const LeaderboardItems = ({user}) => {
 
-    this.state={
-      users: [],
-      headers: []
-    };
-  }
-
-
-
-  componentDidMount() {
-    fetch('https://fcctop100.herokuapp.com/api/fccusers/top/recent#')
-    .then(result=> result.json())
-    .then(users => this.setState({ users }) )
-  }
-
-  render() {
-    const headings = this.state.users[0];
-
-    return (
-      <ul>
-        { 
-          this.state.users.length ?
-          this.state.users.map( user=>
-          <li key={ user.username }>{ user.alltime }</li>) 
-          : <li> Loading... </li>
-        }      
-      </ul> 
-      
-    );
-  }
-}
+  return (
+    <tr>
+      <th><img src= {user.img} height="42" width="42"/></th>
+      <th>{user.username}</th>
+      <th>{user.alltime}</th>
+      <th>{user.recent}</th>
+      <th>{user.lastUpdate}</th>
+    </tr>   
+  ) 
+};
 
 export default LeaderboardItems;
-
-//Object.keys(arr)
