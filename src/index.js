@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+//import Leaderboard from './components/leaderboard';
+import LeaderboardItems from './components/leaderboard-items';
 
-import App from './components/app';
-import reducers from './reducers';
+class App extends Component {
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+  render() {
+    return(
+      <div>
+        <h1>Camper Leaderboard</h1>
+        <LeaderboardItems />
+      </div>
+    )
+  }
+
+}
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+    <App />,
+     document.querySelector('.container'));
