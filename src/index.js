@@ -12,6 +12,24 @@ class App extends Component {
     };
   }
 
+  AllTime = () => {
+      users.sort((a, b) => {
+      return b.alltime -a.alltime;
+    });
+    console.log(users[0]);
+  }
+
+  Recent = () => {
+      users.sort((a, b) => {
+      return b.recent -a.recent;
+    });
+    console.log(users[0]);
+  }
+
+  test = () => {
+    console.log(users[0]);
+  }
+
   componentDidMount() {
     fetch('https://fcctop100.herokuapp.com/api/fccusers/top/recent#')
     .then(result=> result.json())
@@ -23,7 +41,8 @@ class App extends Component {
       <div>
         <h1>Camper Leaderboard</h1>
         <Leaderboard
-          users={ this.state.users } />
+          users={ this.state.users } 
+          tester={ this.test } />
       </div>
     )
   }

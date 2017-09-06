@@ -8,21 +8,17 @@ const Leaderboard = (props) => {
         )
     });
 
-    const AllTime = props.users.map((user) => {
-        console.log(user.username);
-    });
-
     return (
         <table>
             <tbody>
                 <tr>
                     <th id="ava"></th>
                     <th className="name">User Name</th>
-                    <th className="info" onClick={ AllTime } >All Time</th>
-                    <th className="info">Last 30 Days</th>
+                    <th className="info" onClick={() => props.tester() } >All Time</th>
+                    <th className="info" onClick={() => {console.log('place2') } }>Last 30 Days</th>
                 </tr>
                 { UserItems }
-                <tr><th>}</th></tr>
+                <tr><td colSpan="4">test </td></tr>
             </tbody>
         </table>
     )
