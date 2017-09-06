@@ -1,0 +1,25 @@
+table {
+    border-collapse: collapse;
+    border: 1px solid #dddddd;
+    width: 60%;
+}
+
+td, th {
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#ava {
+    width:7%;
+}
+
+.name{
+    padding-left: 10px;
+}
+
+.info{
+    text-align: center;
+}
