@@ -16,6 +16,12 @@ tr:nth-child(even) {
     width:7%;
 }
 
+#head:hover{
+    cursor: pointer;
+    font-style: italic;
+    color: palegreen;
+}
+
 .name{
     padding-left: 10px;
 }
