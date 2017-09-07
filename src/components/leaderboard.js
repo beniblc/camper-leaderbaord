@@ -14,8 +14,8 @@ const Leaderboard = (props) => {
                 <tr>
                     <th id="ava"></th>
                     <th className="name">User Name</th>
-                    <th className="info" onClick={() => props.tester() } >All Time</th>
-                    <th className="info" onClick={() => {console.log('place2') } }>Last 30 Days</th>
+                    <th className="info" onClick={() => props.allTime(props.users) } >All Time</th>
+                    <th className="info" onClick={() => props.recent(props.users) } >Last 30 Days</th>
                 </tr>
                 { UserItems }
                 <tr><td colSpan="4">test </td></tr>

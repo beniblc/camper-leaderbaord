@@ -12,22 +12,22 @@ class App extends Component {
     };
   }
 
-  AllTime = () => {
-      users.sort((a, b) => {
+  AllTime = (users) => {
+    users.sort((a, b) => {
       return b.alltime -a.alltime;
     });
-    console.log(users[0]);
+    this.setState({ users });
   }
 
-  Recent = () => {
+  Recent = (users) => {
       users.sort((a, b) => {
       return b.recent -a.recent;
     });
-    console.log(users[0]);
+    this.setState({ users });
   }
 
-  test = () => {
-    console.log(users[0]);
+  test = (users) => {
+    console.log(this.state.users[0]);
   }
 
   componentDidMount() {
@@ -41,8 +41,9 @@ class App extends Component {
       <div>
         <h1>Camper Leaderboard</h1>
         <Leaderboard
-          users={ this.state.users } 
-          tester={ this.test } />
+          users={ this.state.users }
+          allTime={ this.AllTime } 
+          recent={ this.Recent } />
       </div>
     )
   }
