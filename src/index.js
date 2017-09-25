@@ -26,10 +26,6 @@ class App extends Component {
     this.setState({ users });
   }
 
-  test = (users) => {
-    console.log(this.state.users[0]);
-  }
-
   componentDidMount() {
     fetch('https://fcctop100.herokuapp.com/api/fccusers/top/recent#')
     .then(result=> result.json())
